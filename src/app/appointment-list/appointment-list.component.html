@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="card mt-3">
+        <div class="row">
+            <div class="col">
+                <h2 class="text-center">Create new Appointment</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div>
+    <input [(ngModel)]="newAppointmentTitle" type="text" placeholder="Appointment Description">
+    <input [(ngModel)]="newAppintmentDate" type="date" placeholder="Appointment Date">
+    <button (click)="addAppointment()">Add</button>
+</div>
+
+<ul>
+    <li *ngFor="let item of appointments; index as i">
+        {{item.title}} - {{item.date | date:'MM/dd/yyy'}}
+        <button (click)="deleteAppointment(i)">Delete</button>
+
+    </li>
+</ul>
